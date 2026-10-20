@@ -40,11 +40,15 @@ if (savedTheme) {
   document.body.dataset.theme = savedTheme;
 }
 
+
 function pickSticker(sticker) {
   selectedSticker = sticker;
+
   document.querySelectorAll('#stickers button').forEach(button => {
-    button.style.outline =
-      button.textContent === sticker ? '2px solid var(--accent)' : 'none';
+    const isSelected = button.textContent.trim() === sticker;
+
+    button.classList.toggle('sticker-selected', isSelected);
+    button.setAttribute('aria-pressed', String(isSelected));
   });
 }
 
