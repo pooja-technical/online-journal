@@ -416,3 +416,42 @@ footer {
     transition-duration: .01ms !important;
   }
 }
+
+
+/* Make sticker buttons feel interactive */
+#stickers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 15px 0 22px;
+}
+
+#stickers button {
+  width: 58px;
+  height: 58px;
+  padding: 8px;
+  border-radius: 18px;
+  background: #fff0f7;
+  border: 2px solid #f7d7e7;
+  box-shadow: 0 4px 0 #efd1e1;
+  font-size: 27px;
+  transition: transform .2s, background .2s;
+}
+
+#stickers button:hover {
+  transform: translateY(-5px) rotate(-7deg) scale(1.08);
+  background: #ffe0ef;
+}
+
+#stickers button.sticker-selected {
+  background: #f0e5ff;
+  border: 3px solid #b48aff;
+  box-shadow: 0 0 0 4px #b48aff30, 0 5px 0 #d8c4ff;
+  transform: scale(1.08) rotate(-4deg);
+}
+
+/* Required for the journal navigation */
+.hidden {
+  display: none !important;
+}
+
