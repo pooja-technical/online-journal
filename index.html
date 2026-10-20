@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyJournal - Online Diary</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h2>🌷 MyJournal</h2>
+    <p>Your little space for thoughts and memories</p>
+  </header>
+
+  <main>
+    <section class="editor">
+      <h1>Dear Diary ☁️</h1>
+      <form id="journalForm">
+        <input id="title" type="text" placeholder="Entry title" required>
+        <select id="mood">
+          <option>🌷 Calm</option>
+          <option>😊 Happy</option>
+          <option>✨ Inspired</option>
+          <option>💗 Grateful</option>
+          <option>🌧️ Low-key</option>
+        </select>
+        <textarea id="content" placeholder="Write your thoughts..." required></textarea>
+        <button type="submit">Save Entry</button>
+      </form>
+    </section>
+
+    <section class="entries">
+      <h2>My Journal Entries 📔</h2>
+      <input id="search" type="text" placeholder="Search entries...">
+      <div id="entryList"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
