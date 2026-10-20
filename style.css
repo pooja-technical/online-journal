@@ -1,0 +1,90 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff7f8;
+  color: #354b40;
+}
+
+header {
+  text-align: center;
+  padding: 22px;
+  background: #f3dce4;
+}
+
+header h2 {
+  margin: 0;
+  color: #a64f70;
+}
+
+header p {
+  font-size: 14px;
+}
+
+main {
+  max-width: 850px;
+  margin: 30px auto;
+  padding: 15px;
+}
+
+.editor, .entries {
+  background: white;
+  padding: 24px;
+  margin-bottom: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px #eadde0;
+}
+
+h1, h2 {
+  color: #a64f70;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #e5cbd4;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+button {
+  background: #bd6e8a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 11px 16px;
+  cursor: pointer;
+  margin: 5px 5px 5px 0;
+}
+
+button:hover {
+  background: #984b68;
+}
+
+.entry {
+  background: #f1f7ef;
+  border-left: 4px solid #9db99c;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 14px 0;
+  overflow-wrap: anywhere;
+}
+
+.entry small {
+  color: #738477;
+}
+
+.entry p {
+  white-space: pre-wrap;
+  line-height: 1.5;
+}
