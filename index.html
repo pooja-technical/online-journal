@@ -4,39 +4,105 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MyJournal - Online Diary</title>
+  <title>Little Moments | My Journal</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Kalam&family=Playfair+Display:wght@500;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <h2>🌷 MyJournal</h2>
-    <p>Your little space for thoughts and memories</p>
+    <h1>🌷 Little Moments</h1>
+    <p>Your little corner of the world ♡</p>
+    <select id="theme" onchange="changeTheme()">
+      <option value="rose">🌸 Rose Garden</option>
+      <option value="sage">🌿 Sage Green</option>
+      <option value="lavender">🪻 Lavender Dream</option>
+      <option value="sky">☁️ Soft Blue</option>
+    </select>
   </header>
 
+  <nav>
+    <button onclick="showSection('journal')">📔 My Journal</button>
+    <button onclick="showSection('todos')">🌱 To-do List</button>
+    <button onclick="showSection('memories')">💌 My Memories</button>
+  </nav>
+
   <main>
-    <section class="editor">
-      <h1>Dear Diary ☁️</h1>
-      <form id="journalForm">
-        <input id="title" type="text" placeholder="Entry title" required>
-        <select id="mood">
-          <option>🌷 Calm</option>
-          <option>😊 Happy</option>
-          <option>✨ Inspired</option>
-          <option>💗 Grateful</option>
-          <option>🌧️ Low-key</option>
-        </select>
-        <textarea id="content" placeholder="Write your thoughts..." required></textarea>
-        <button type="submit">Save Entry</button>
-      </form>
+    <section id="journal" class="section">
+      <div class="welcome">
+        <h2>Dear diary, ✨</h2>
+        <p>You don't have to have it all figured out. Just begin.</p>
+      </div>
+
+      <div class="card">
+        <h2 id="formHeading">✍️ Write a new page</h2>
+        <form id="journalForm">
+          <label for="title">Title of your day</label>
+          <input id="title" placeholder="A little bit of today..." required>
+
+          <label for="date">Date</label>
+          <input type="date" id="date" required>
+
+          <label for="mood">How are you feeling?</label>
+          <select id="mood">
+            <option>😊 Happy</option>
+            <option>😌 Calm</option>
+            <option>🥰 Grateful</option>
+            <option>🤩 Excited</option>
+            <option>😴 Tired</option>
+            <option>🌧️ A little low</option>
+            <option>🌱 Hopeful</option>
+          </select>
+
+          <label for="content">Your thoughts</label>
+          <textarea id="content" rows="7"
+            placeholder="Dear diary, today I..." required></textarea>
+
+          <label>Choose a cute sticker</label>
+          <div id="stickers">
+            <button type="button" onclick="pickSticker('🌷')">🌷</button>
+            <button type="button" onclick="pickSticker('🍓')">🍓</button>
+            <button type="button" onclick="pickSticker('🦋')">🦋</button>
+            <button type="button" onclick="pickSticker('🌙')">🌙</button>
+            <button type="button" onclick="pickSticker('🐻')">🐻</button>
+            <button type="button" onclick="pickSticker('⭐')">⭐</button>
+            <button type="button" onclick="pickSticker('💌')">💌</button>
+          </div>
+
+          <p class="prompt">
+            💡 <strong>Today's little prompt:</strong><br>
+            What made you smile today?
+          </p>
+
+          <button class="primary" type="submit">Save my page ♡</button>
+          <button class="secondary" type="button" onclick="resetForm()">Clear</button>
+        </form>
+      </div>
     </section>
 
-    <section class="entries">
-      <h2>My Journal Entries 📔</h2>
-      <input id="search" type="text" placeholder="Search entries...">
-      <div id="entryList"></div>
+    <section id="todos" class="section hidden">
+      <div class="card">
+        <h2>🌱 Little things to do</h2>
+        <p>Small steps are still progress!</p>
+        <form id="todoForm">
+          <input id="todoInput" placeholder="Something you want to do..." required>
+          <button class="primary" type="submit">Add task +</button>
+        </form>
+        <p id="todoCount"></p>
+        <ul id="todoList"></ul>
+      </div>
+    </section>
+
+    <section id="memories" class="section hidden">
+      <div class="card">
+        <h2>💌 My little memories</h2>
+        <input id="search" placeholder="🔎 Search your journal..."
+          oninput="renderEntries()">
+        <div id="entries"></div>
+      </div>
     </section>
   </main>
 
+  <footer>Made with love, flowers & little dreams ♡</footer>
   <script src="script.js"></script>
 </body>
 </html>
