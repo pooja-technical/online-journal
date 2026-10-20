@@ -1,288 +1,275 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Quicksand:wght@400;500;600;700&family=Caveat:wght@500;600;700&display=swap');
+
 :root {
-  --bg: #fff5f6;
-  --card: #fffdfb;
-  --accent: #cf7892;
-  --soft: #f9e3e9;
-  --text: #59434c;
+  --pink: #ff8fb1;
+  --pink-light: #fff0f5;
+  --purple: #c5a5ff;
+  --lavender: #f1eaff;
+  --cream: #fffaf2;
+  --text: #5b4055;
+  --white: #ffffff;
+  --shadow: 0 8px 25px rgba(184, 113, 157, .13);
+  --border: #f6dce9;
 }
 
 * {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  background: var(--bg);
+  min-height: 100vh;
+  font-family: 'Quicksand', sans-serif;
   color: var(--text);
-  font-family: 'Nunito', sans-serif;
-  transition: background 0.3s;
+  background:
+    radial-gradient(circle at 10% 10%, #ffe1ec 0, transparent 25%),
+    radial-gradient(circle at 90% 25%, #e8dcff 0, transparent 27%),
+    linear-gradient(135deg, #fff8fb, #fffaf2 55%, #f8f2ff);
+  background-attachment: fixed;
+}
+
+body::before {
+  content: "✿  ✧  ♡  ✦  ❀  ♡  ✧";
+  position: fixed;
+  top: 12px;
+  right: 18px;
+  color: #e8a3c3;
+  opacity: .35;
+  font-size: 23px;
+  letter-spacing: 12px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+h1, h2, h3 {
+  color: #a44f82;
+  letter-spacing: -.5px;
+}
+
+h1 {
+  font-family: 'Caveat', cursive;
+  font-size: clamp(2.7rem, 7vw, 4.5rem);
+  margin-bottom: 8px;
+}
+
+h2 {
+  font-size: 1.4rem;
+}
+
+p {
+  line-height: 1.7;
+}
+
+header, nav, main, footer {
+  width: min(1100px, 92%);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 header {
   text-align: center;
-  padding: 28px 15px 20px;
+  padding: 48px 16px 24px;
 }
 
-h1, h2 {
-  font-family: 'Playfair Display', serif;
-}
-
-h1 {
-  margin-bottom: 4px;
-  font-size: 34px;
+header::before {
+  content: "🌷 ✨ 🧸 ✨ 🌷";
+  display: block;
+  font-size: 27px;
+  margin-bottom: 8px;
 }
 
 header p {
-  margin-top: 5px;
-}
-
-header select {
-  margin-top: 10px;
+  color: #9b7894;
+  font-size: 1rem;
 }
 
 nav {
   display: flex;
   justify-content: center;
-  gap: 10px;
   flex-wrap: wrap;
-  padding: 12px;
-  background: var(--card);
-  border-top: 1px solid var(--soft);
-  border-bottom: 1px solid var(--soft);
+  gap: 10px;
+  padding: 14px;
+  margin-bottom: 28px;
+  border: 1px solid #ffffff;
+  border-radius: 24px;
+  background: rgba(255,255,255,.78);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
 }
 
-button, select, input, textarea {
-  font: inherit;
-}
-
-button {
-  cursor: pointer;
+button, .button {
   border: none;
-  border-radius: 12px;
-  padding: 10px 15px;
-  transition: transform 0.2s, opacity 0.2s;
+  border-radius: 16px;
+  padding: 11px 17px;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: .94rem;
+  color: #81476d;
+  background: #ffe1ed;
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s, background .2s;
 }
 
-button:hover {
-  transform: translateY(-2px);
+button:hover, .button:hover {
+  transform: translateY(-3px) rotate(-1deg);
+  box-shadow: 0 6px 15px #e7a7c755;
+  background: #ffd0e3;
 }
 
-nav button, .secondary {
-  background: var(--soft);
-  color: var(--text);
+button:active {
+  transform: scale(.96);
+}
+
+nav button {
+  background: #fff0f6;
 }
 
 main {
-  max-width: 850px;
-  margin: 28px auto;
-  padding: 0 18px;
+  padding-bottom: 50px;
 }
 
-.welcome {
-  padding: 22px;
-  text-align: center;
-  background: linear-gradient(120deg, var(--soft), var(--card));
-  border-radius: 20px;
-  margin-bottom: 22px;
+section, .panel, .card, form {
+  background: rgba(255,255,255,.88);
+  border: 2px solid #fff;
+  border-radius: 24px;
+  padding: clamp(18px, 4vw, 30px);
+  margin-bottom: 24px;
+  box-shadow: var(--shadow);
 }
 
-.welcome h2 {
-  margin: 0 0 8px;
+section, .card {
+  position: relative;
 }
 
-.welcome p {
-  margin-bottom: 0;
-}
-
-.card {
-  background: var(--card);
-  border: 1px solid var(--soft);
-  padding: 24px;
-  margin-bottom: 20px;
-  border-radius: 20px;
-  box-shadow: 0 8px 25px #76515b0d;
-}
-
-.card h2 {
-  margin-top: 0;
-}
-
-label {
-  display: block;
-  margin: 15px 0 6px;
-  font-weight: 700;
-  font-size: 14px;
+section::before {
+  content: "✧";
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  color: #edb4d0;
+  font-size: 25px;
 }
 
 input, textarea, select {
   width: 100%;
-  border: 1px solid #ead6dd;
-  border-radius: 10px;
-  padding: 12px;
+  border: 2px solid var(--border);
+  border-radius: 15px;
+  padding: 13px 15px;
+  margin: 7px 0 15px;
   color: var(--text);
-  background: white;
-}
-
-textarea {
-  resize: vertical;
-  font-family: 'Kalam', cursive;
-  font-size: 17px;
-  line-height: 1.8;
+  background: #fffafd;
+  font-family: inherit;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
 }
 
 input:focus, textarea:focus, select:focus {
-  outline: 2px solid var(--accent);
-  outline-offset: 1px;
+  border-color: var(--pink);
+  box-shadow: 0 0 0 4px #ffb9d522;
 }
 
-#stickers {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin: 10px 0;
-}
-
-#stickers button {
-  background: var(--soft);
-  font-size: 22px;
-}
-
-.prompt {
-  background: var(--soft);
-  padding: 13px;
-  border-radius: 12px;
+textarea {
+  min-height: 150px;
+  resize: vertical;
   line-height: 1.8;
 }
 
-.primary {
-  background: var(--accent);
-  color: white;
-  margin-top: 10px;
-}
-
-.hidden {
-  display: none;
-}
-
-.entry {
-  padding: 17px;
-  margin-top: 15px;
-  background: var(--bg);
-  border-radius: 14px;
-  border-left: 4px solid var(--accent);
-  overflow-wrap: anywhere;
-}
-
-.entry h3 {
-  margin: 5px 0;
-  font-family: 'Playfair Display', serif;
-}
-
-.entry p {
-  white-space: pre-wrap;
-}
-
-.entry-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-}
-
-.entry-actions button {
-  background: var(--soft);
-  color: var(--text);
-  padding: 7px 10px;
-  font-size: 12px;
-}
-
-#todoForm {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-#todoForm input {
-  flex: 1;
-  min-width: 180px;
-}
-
-#todoList {
-  padding-left: 0;
-  list-style: none;
-}
-
-#todoList li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px;
+label {
+  display: block;
   margin-top: 8px;
-  border-radius: 10px;
-  background: var(--bg);
+  font-weight: 700;
+  color: #9c658d;
 }
 
-#todoList li input {
+::placeholder {
+  color: #c4a8bd;
+}
+
+.card {
+  background: linear-gradient(145deg, #fff, #fff6fa);
+  border: 1px solid #f8dfeb;
+  transition: transform .25s, box-shadow .25s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px #d99abb33;
+}
+
+.card h3 {
+  font-family: 'Caveat', cursive;
+  font-size: 1.8rem;
+}
+
+small, .muted {
+  color: #a78da4;
+}
+
+ul {
+  padding-left: 23px;
+}
+
+li {
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+input[type="checkbox"] {
   width: auto;
+  margin-right: 9px;
+  accent-color: #e77eae;
 }
 
-#todoList li span {
-  flex: 1;
-  overflow-wrap: anywhere;
+hr {
+  border: 0;
+  border-top: 2px dashed #f0c6dd;
+  margin: 22px 0;
 }
 
-#todoList li.done span {
-  text-decoration: line-through;
-  opacity: 0.6;
+img {
+  max-width: 100%;
+  border-radius: 18px;
+}
+
+a {
+  color: #bb6197;
 }
 
 footer {
   text-align: center;
-  padding: 25px 15px;
-  color: var(--text);
-  opacity: 0.75;
+  padding: 25px 12px 40px;
+  color: #a78da4;
+  font-family: 'Caveat', cursive;
+  font-size: 1.4rem;
 }
 
-/* Theme options */
-body[data-theme="sage"] {
-  --bg: #f0f5ed;
-  --card: #fffef9;
-  --accent: #719777;
-  --soft: #dfeadd;
-  --text: #405446;
+::selection {
+  color: #713d61;
+  background: #ffd8e9;
 }
 
-body[data-theme="lavender"] {
-  --bg: #f7f1fc;
-  --card: #fffdfd;
-  --accent: #9c7bc0;
-  --soft: #eee2f7;
-  --text: #554568;
-}
-
-body[data-theme="sky"] {
-  --bg: #eff7fb;
-  --card: #fffefe;
-  --accent: #659bb9;
-  --soft: #dfeff7;
-  --text: #3c5363;
-}
-
-@media (max-width: 550px) {
-  h1 {
-    font-size: 28px;
-  }
-
-  .card {
-    padding: 17px;
+@media (max-width: 600px) {
+  header {
+    padding-top: 32px;
   }
 
   nav {
-    gap: 5px;
+    border-radius: 18px;
+    gap: 7px;
   }
 
   nav button {
-    padding: 9px;
-    font-size: 12px;
+    padding: 10px 12px;
+    font-size: .85rem;
+  }
+
+  section, .panel, .card, form {
+    border-radius: 19px;
   }
 }
