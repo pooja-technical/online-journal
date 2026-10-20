@@ -306,3 +306,23 @@ $("importFile").addEventListener("change", async event => {
 
 renderEntries();
 renderTodos();
+
+
+/* Writing style selector */
+const writingModeSelect = document.getElementById("writingMode");
+const WRITING_MODE_KEY = "littleJournalWritingMode";
+
+function applyWritingMode(mode) {
+  document.body.dataset.writingMode = mode;
+  writingModeSelect.value = mode;
+  localStorage.setItem(WRITING_MODE_KEY, mode);
+}
+
+const savedWritingMode =
+  localStorage.getItem(WRITING_MODE_KEY) || "notebook";
+
+applyWritingMode(savedWritingMode);
+
+writingModeSelect.addEventListener("change", function () {
+  applyWritingMode(this.value);
+});
