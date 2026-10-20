@@ -204,3 +204,69 @@ body[data-writing-mode="notepad"] #content {
   font-size: 16px;
   line-height: 1.8;
 }
+
+
+
+
+
+/* Writing page selector */
+.writing-style-picker {
+  display: grid;
+  gap: 8px;
+  margin: 16px 0 12px;
+}
+
+.writing-style-picker label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+#writingMode {
+  max-width: 320px;
+}
+
+/* Notebook: lined paper */
+body[data-writing-mode="notebook"] #entryBody {
+  background-color: #fffef9;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 30px,
+    #c8dcef 31px,
+    transparent 32px
+  );
+  line-height: 32px;
+  font-family: "Patrick Hand", cursive;
+  font-size: 19px;
+  border-left: 4px solid #e8a0a0;
+}
+
+/* Diary: soft pink */
+body[data-writing-mode="diary"] #entryBody {
+  background-color: #fff0f5;
+  color: #70485a;
+  font-family: "Patrick Hand", cursive;
+  font-size: 20px;
+  line-height: 1.9;
+  border: 1px solid #efcada;
+}
+
+/* Journal: dotted paper */
+body[data-writing-mode="journal"] #entryBody {
+  background-color: #fffef9;
+  background-image: radial-gradient(#b7c9b3 1px, transparent 1px);
+  background-size: 18px 18px;
+  color: #405446;
+  font-family: Georgia, serif;
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+/* Notepad: clean white */
+body[data-writing-mode="notepad"] #entryBody {
+  background: #fff;
+  color: #252525;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+}
