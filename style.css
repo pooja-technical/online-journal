@@ -153,3 +153,54 @@ body[data-font="type"] textarea, body[data-font="type"] #entryTitle { font-famil
   .panel { padding: 16px; }
   .editor-bottom { align-items: flex-start; flex-direction: column; }
 }
+
+/* Writing area styles */
+#content {
+  min-height: 260px;
+  padding: 22px;
+  border-radius: 14px;
+  transition: background 0.25s, font-family 0.25s;
+}
+
+/* Notebook: ruled paper */
+body[data-writing-mode="notebook"] #content {
+  background-color: #fffef9;
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 30px,
+    #c8dcef 31px
+  );
+  line-height: 31px;
+  font-family: "Kalam", cursive;
+  padding-left: 28px;
+  border-left: 4px solid #e8a0a0;
+}
+
+/* Diary: soft pink paper */
+body[data-writing-mode="diary"] #content {
+  background: #fff0f5;
+  color: #70485a;
+  font-family: "Kalam", cursive;
+  font-size: 19px;
+  line-height: 1.9;
+}
+
+/* Journal: dotted paper */
+body[data-writing-mode="journal"] #content {
+  background-color: #fffef9;
+  background-image: radial-gradient(#b7c9b3 1px, transparent 1px);
+  background-size: 18px 18px;
+  color: #405446;
+  font-family: "Playfair Display", serif;
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+/* Notepad: plain paper */
+body[data-writing-mode="notepad"] #content {
+  background: #ffffff;
+  color: #252525;
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+}
